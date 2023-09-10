@@ -1,8 +1,8 @@
 import { useCount } from "./useCount";
 
-function Counter() {
-  const initialCount = 0;
-  const { count, incrementCount, decrementCount } = useCount(initialCount);
+// eslint-disable-next-line react/prop-types
+function Counter({ initialCount }) {
+  const { count, incrementCount, decrementCount } = useCount(initialCount || 0);
   return (
     <div>
       <button onClick={decrementCount}>-</button>
