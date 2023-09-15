@@ -1,12 +1,11 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 function PostList() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://example.com/api/posts")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
+    axios.get("http://example.com/api/posts").then((res) => setPosts(res.data));
   }, []);
   return (
     <ol>
